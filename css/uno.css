@@ -1710,8 +1710,10 @@ th, td {
 
 .widget-wrap {
 	border: 1px solid #ddd;
+	margin: 20px 0;
 }
 .widget-title {
+	margin-top: 0;
 	padding: 15px 20px;
 	border-bottom: 1px solid #ddd;
 }
