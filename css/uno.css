@@ -1146,7 +1146,7 @@ hr {
   display: none !important; }
 
 .post-comments {
-  border-top: 1px solid #dddddd;
+/*  border-top: 1px solid #dddddd; */
   padding: 60px 0; }
 
 .post-meta {
