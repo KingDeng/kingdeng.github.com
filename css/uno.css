@@ -1710,9 +1710,9 @@ th, td {
 
 .widget-wrap {
 	border: 1px solid #ddd;
-	padding: 15px 20px;
 }
 .widget-title {
+	padding: 15px 20px;
 	border-bottom: 1px solid #ddd;
 }
 .category-list-count {
