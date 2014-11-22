@@ -1103,13 +1103,13 @@ pre {
 .content-wrapper {
   float: left;
   z-index: 800;
-  width: 60%;
+  width: 56%;
   max-width: 960px;
   margin-left: 32%; }
 
 .content-wrapper__inner {
-  margin-left: 10%;
-  margin-right: 50px;
+  margin-left: 7%;
+  margin-right: 0px;
   padding: 50px 0; }
 
 .footer {
@@ -1217,7 +1217,7 @@ hr {
   background-size: cover; }
 
 .panel-cover--collapsed {
-  width: 28%;
+  width: 25%;
   max-width: 430px; }
 
 .panel-cover--overlay {
