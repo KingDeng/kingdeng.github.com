@@ -1707,3 +1707,19 @@ th, td {
 	float: right;
 	margin-right: 10px;
 }
+
+.widget-wrap {
+	border: 1px solid #ddd;
+}
+.widget-title {
+	border-bottom: 1px solid #ddd;
+}
+.category-list-count {
+	margin-left: 10px;
+}
+.category-list-count:before {
+	content: "(";
+}
+.category-list-count:after {
+	content: ")";
+}
