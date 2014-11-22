@@ -1101,13 +1101,15 @@ pre {
   margin: 0 auto; }
 
 .content-wrapper {
+  float: left;
   z-index: 800;
   width: 60%;
   max-width: 960px;
   margin-left: 32%; }
 
 .content-wrapper__inner {
-  margin: 0 10%;
+  margin-left: 10%;
+  margin-right: 50px;
   padding: 50px 0; }
 
 .footer {
@@ -1700,4 +1702,7 @@ th, td {
     border-bottom: 1px solid #AAAAAA;
     padding: 5px 10px;
     text-align: left;
+}
+#sidebar{
+	float: right;
 }
