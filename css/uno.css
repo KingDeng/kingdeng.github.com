@@ -1710,6 +1710,7 @@ th, td {
 
 .widget-wrap {
 	border: 1px solid #ddd;
+	padding: 15px 20px;
 }
 .widget-title {
 	border-bottom: 1px solid #ddd;
