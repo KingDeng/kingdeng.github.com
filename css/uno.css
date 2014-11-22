@@ -1059,7 +1059,7 @@ pre {
     .time a:hover,
     .author a:hover,
     .tags a:hover {
-      color: #006699; }
+      color: #e5002d; }
 
 .excerpt {
   margin: 0;
@@ -1116,8 +1116,8 @@ pre {
   display: block;
   padding: 2em 0 0 0;
   border-top: 2px solid #dddddd;
-  font-size: .7em;
-  color: #b3b3b3; }
+  font-size: .9em;
+}
 
 .footer__copyright {
   display: block;
@@ -1126,7 +1126,7 @@ pre {
     color: #a6a6a6;
     text-decoration: underline; }
     .footer__copyright a:hover {
-      color: #006699; }
+      color: #e5002d; }
 
 .avatar,
 .logo {
@@ -1322,7 +1322,7 @@ hr {
   color: #006699;
   -webkit-font-smoothing: antialiased; }
   .btn:hover, .navigation__item a:hover {
-    color: #006699;
+    color: #e5002d;
     border-color: #006699; }
 
 .btn-secondary {
@@ -1450,7 +1450,7 @@ i {
   .post-list__post-title a {
     color: #333333; }
     .post-list__post-title a:hover {
-      color: #006699; }
+      color: #e5002d; }
 
 .post-list__meta {
   display: block;
