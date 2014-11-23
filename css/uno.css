@@ -1754,13 +1754,12 @@ input[type="tel"] {
   
   .sidebar {
 	width: 96%;
-	float: none;
+/*	float: none; */
 	margin-left: 2%;
 	margin-right: 2%;
   }
   .widget-wrap {
-	margin-top: 100%;
-	padding
+
   }
   
   .footer {
