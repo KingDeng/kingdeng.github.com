@@ -1117,11 +1117,15 @@ pre {
   padding: 2em 0 0 0;
   border-top: 2px solid #dddddd;
   font-size: .9em;
+  margin-left: 22%;
+  width: 56%;
 }
 
 .footer__copyright {
   display: block;
-  margin-bottom: .7em; }
+  margin-bottom: .7em; 
+  margin-left: 7%;
+}
   .footer__copyright a {
     color: #a6a6a6;
     text-decoration: underline; }
