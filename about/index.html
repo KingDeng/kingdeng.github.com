@@ -247,6 +247,23 @@ classes that you can use:
       // add your google analytics code here
     </script>
 
+	<!-- sidebar -->
+	(function{
+		$(window).scroll(function () {
+			var width = window.screen.width;
+			if(width < 960 & width >  620){
+				var scroll = $(document).scrollTop();
+				if(scroll < 100){
+					$("#sidebar").css("top",150-scroll);
+				} else {
+					$("#sidebar").css("top",50);
+				}
+			} else if(){
+			
+			}
+		});
+	})(jQuery)
+	
     <!-- totop -->
     <div id="totop" style="position:fixed;bottom:50px;right:30px;cursor: pointer;">
     <a title="back to top"><img style="width:30px;height:30px;" src="/images/totop.png"/></a>
