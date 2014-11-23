@@ -1477,6 +1477,34 @@ i {
 *:focus {
   outline: none; }
 
+  
+/* Add by King Deng */
+.sidebar{
+	float: right;
+	width: 20%;
+	margin-right: 0.5%;
+}
+
+.widget-wrap {
+	border: 1px solid #ddd;
+	margin: 20px 0;
+}
+.widget-title {
+	margin-top: 0;
+	padding: 15px 20px;
+	border-bottom: 1px solid #ddd;
+}
+.category-list-count {
+	margin-left: 10px;
+}
+.category-list-count:before {
+	content: "(";
+}
+.category-list-count:after {
+	content: ")";
+}
+  
+  
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -1742,7 +1770,7 @@ input[type="tel"] {
 
 /* add */
 
- table {
+table {
     border-collapse: collapse;
     width: 100%;
     margin: 0 0 20px;
@@ -1754,28 +1782,4 @@ th, td {
     border-bottom: 1px solid #AAAAAA;
     padding: 5px 10px;
     text-align: left;
-}
-.sidebar{
-	float: right;
-	width: 20%;
-	margin-right: 0.5%;
-}
-
-.widget-wrap {
-	border: 1px solid #ddd;
-	margin: 20px 0;
-}
-.widget-title {
-	margin-top: 0;
-	padding: 15px 20px;
-	border-bottom: 1px solid #ddd;
-}
-.category-list-count {
-	margin-left: 10px;
-}
-.category-list-count:before {
-	content: "(";
-}
-.category-list-count:after {
-	content: ")";
 }
