@@ -1483,7 +1483,7 @@ i {
 .sidebar{
 	float: right;
 	width: 20%;
-	margin-right: 0.5%;
+/*	margin-right: 0.5%; */
 }
 
 .widget-wrap {
@@ -1601,11 +1601,17 @@ input[type="tel"] {
   .content-wrapper {
     margin-left: 22%; } 
 	
+  .sidebar {
+	position: fixed;
+	height: 100%;
+	top: 0.5%;
+	right: 0.5%;
+  }
+	
   .footer {
 	width: 56%;
 	margin-left: 22%;
   }
-  
   .footer__copyright {
 	margin-left: 7%;
   }
