@@ -1110,7 +1110,8 @@ pre {
 .content-wrapper__inner {
   margin-left: 7%;
   margin-right: 0px;
-  padding: 50px 0; }
+  padding-top: 50px; 
+}
 
 .footer {
   display: block;
@@ -1756,6 +1757,10 @@ input[type="tel"] {
 	float: none;
 	margin-left: 2%;
 	margin-right: 2%;
+  }
+  .widget-wrap {
+	margin-top: 100%;
+	padding
   }
   
   .footer {
