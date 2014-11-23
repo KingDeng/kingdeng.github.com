@@ -1750,6 +1750,11 @@ input[type="tel"] {
 	width: 23%;
 	margin-right: 0.5%;
   }
+  
+  .footer {
+	width: 73%;
+	margin-left: 2%;
+  }
 }
 @media all and (max-width: 620px) {
   .panel-main__inner {
