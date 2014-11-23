@@ -1617,6 +1617,14 @@ input[type="tel"] {
   }
 }
 
+@media all and (max-width: 1300px){
+	.sidebar {
+		position: fixed;
+		height: 100%;
+		top: 0.5%;
+		right: 0.5%;
+	}
+}
 
 @media all and (max-width: 1100px) {
   .panel-cover__logo {
@@ -1768,6 +1776,7 @@ input[type="tel"] {
   .sidebar {
 	width: 96%;
 /*	float: none; */
+	position: relative;
 	margin-left: 2%;
 	margin-right: 2%;
   }

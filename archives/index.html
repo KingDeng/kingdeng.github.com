@@ -277,9 +277,9 @@ classes that you can use:
 
 	<!-- sidebar -->
 	<script>
-		(function{
+		(function(){
 			$(window).scroll(function () {
-				var width = window.screen.width;
+				var width = document.body.clientWidth + 17;
 				if(width < 960 & width >  620){
 					var scroll = $(document).scrollTop();
 					if(scroll < 100){
@@ -287,8 +287,6 @@ classes that you can use:
 					} else {
 						$("#sidebar").css("top",50);
 					}
-				} else if(){
-				
 				}
 			});
 		})(jQuery);
