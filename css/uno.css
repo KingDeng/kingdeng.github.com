@@ -1695,7 +1695,7 @@ input[type="tel"] {
     width: 100%;
     margin: 0 0 .4em 0; } 
 	
-  #sidebar{
+  .sidebar{
 	float: right;
 	width: 23%;
 	margin-right: 0.5%;
@@ -1723,7 +1723,7 @@ input[type="tel"] {
 	margin-right: 2%;
   }
   
-  #sidebar {
+  .sidebar {
 	width: 96%;
 	float: none;
 	margin-left: 2%;
@@ -1734,6 +1734,9 @@ input[type="tel"] {
 	width: 96%;
 	margin-left: 2%;
 	margin-right: 2%;
+  }
+  .footer__copyright {
+	text-align: center;
   }
 }
 
@@ -1752,7 +1755,7 @@ th, td {
     padding: 5px 10px;
     text-align: left;
 }
-#sidebar{
+.sidebar{
 	float: right;
 	width: 20%;
 	margin-right: 0.5%;
