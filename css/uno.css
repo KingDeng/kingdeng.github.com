@@ -1701,7 +1701,7 @@ input[type="tel"] {
 	margin-right: 0.5%;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 620px) {
   .panel-main__inner {
     padding: 0 5%; }
 
@@ -1725,6 +1725,9 @@ input[type="tel"] {
   
   #sidebar {
 	width: 96%;
+	float: none;
+	margin-left: 2%;
+	margin-right: 2%;
   }
   
   .footer {
