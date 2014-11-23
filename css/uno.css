@@ -1152,7 +1152,7 @@ hr {
 
 .post-comments {
 /*  border-top: 1px solid #dddddd; */
-  padding: 60px 0; }
+  padding: 20px 0; }
 
 .post-meta {
   margin: 0 0 .4em 0;
@@ -1759,7 +1759,7 @@ input[type="tel"] {
 	margin-right: 2%;
   }
   .widget-wrap {
-
+	margin-top: 0px;
   }
   
   .footer {
