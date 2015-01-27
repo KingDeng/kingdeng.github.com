@@ -1375,7 +1375,9 @@ hr {
 
 nav {
   display: inline-block;
-  position: relative; }
+  position: relative; 
+  width: 100%;
+}
 
 .navigation {
   display: inline-block;
@@ -1814,4 +1816,7 @@ th, td {
     border-bottom: 1px solid #AAAAAA;
     padding: 0px 10px; 
     text-align: left;
+}
+.alignright{
+	float: right;
 }
