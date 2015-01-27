@@ -1376,7 +1376,6 @@ hr {
 nav {
   display: inline-block;
   position: relative; 
-  width: 100%;
 }
 
 .navigation {
@@ -1819,4 +1818,7 @@ th, td {
 }
 .alignright{
 	float: right;
+}
+#pagination {
+    width: 100%;
 }
