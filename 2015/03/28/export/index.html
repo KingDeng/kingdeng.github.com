@@ -7,7 +7,7 @@
     
 
     <title>
-      Json-lib(net.sf.json)包，强烈建议不要再使用 | King Deng&#39;s Blog 
+      不需借助server，将浏览器缓存中的数据下载到本地硬盘 | King Deng&#39;s Blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,18 +15,18 @@
       <meta name="author" content="King Deng">
     
     
-      <meta name="description" content="最近在使用Json-lib，发现有许多BUG，而且开发者早已不在支持，强烈建议不要再使用此开源包。">
+      <meta name="description" content="前段时间参与了一个HTML5的项目，期间有个需求是把存储在浏览器indexedDB中的数据保存到本地硬盘。大家都知道，传统的下载都是通过server下载到本地的，再加上W3C规定浏览器不能访问本地文件系统等原因，这个需求搞了两天才搞定，下面是大概思路，前提是浏览器需要支持HTML5FileSystem API。具体代码实现，需要的朋友请留言：">
     
 
-    <meta name="description" content="最近在使用Json-lib，发现有许多BUG，而且开发者早已不在支持，强烈建议不要再使用此开源包。">
+    <meta name="description" content="前段时间参与了一个HTML5的项目，期间有个需求是把存储在浏览器indexedDB中的数据保存到本地硬盘。大家都知道，传统的下载都是通过server下载到本地的，再加上W3C规定浏览器不能访问本地文件系统等原因，这个需求搞了两天才搞定，下面是大概思路，前提是浏览器需要支持HTML5FileSystem API。具体代码实现，需要的朋友请留言：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Json-lib(net.sf.json)包，强烈建议不要再使用 | King Deng's Blog">
-<meta property="og:url" content="http://yoursite.com/2015/01/17/json/">
+<meta property="og:title" content="不需借助server，将浏览器缓存中的数据下载到本地硬盘 | King Deng's Blog">
+<meta property="og:url" content="http://yoursite.com/2015/03/28/export/">
 <meta property="og:site_name" content="King Deng's Blog">
-<meta property="og:description" content="最近在使用Json-lib，发现有许多BUG，而且开发者早已不在支持，强烈建议不要再使用此开源包。">
+<meta property="og:description" content="前段时间参与了一个HTML5的项目，期间有个需求是把存储在浏览器indexedDB中的数据保存到本地硬盘。大家都知道，传统的下载都是通过server下载到本地的，再加上W3C规定浏览器不能访问本地文件系统等原因，这个需求搞了两天才搞定，下面是大概思路，前提是浏览器需要支持HTML5FileSystem API。具体代码实现，需要的朋友请留言：">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Json-lib(net.sf.json)包，强烈建议不要再使用 | King Deng's Blog">
-<meta name="twitter:description" content="最近在使用Json-lib，发现有许多BUG，而且开发者早已不在支持，强烈建议不要再使用此开源包。">
+<meta name="twitter:title" content="不需借助server，将浏览器缓存中的数据下载到本地硬盘 | King Deng's Blog">
+<meta name="twitter:description" content="前段时间参与了一个HTML5的项目，期间有个需求是把存储在浏览器indexedDB中的数据保存到本地硬盘。大家都知道，传统的下载都是通过server下载到本地的，再加上W3C规定浏览器不能访问本地文件系统等原因，这个需求搞了两天才搞定，下面是大概思路，前提是浏览器需要支持HTML5FileSystem API。具体代码实现，需要的朋友请留言：">
 
     
     
@@ -167,12 +167,12 @@ classes that you can use:
     
       
       <div class="post-meta">
-        <time datetime="1月 17 2015" class="post-meta__date date">1月 17 2015</time> &#8226; 
+        <time datetime="3月 28 2015" class="post-meta__date date">3月 28 2015</time> &#8226; 
 
         <span class="post-meta__tags tags">
 
             <font class="categories">
-              <a class="categories-link" href="/categories/Java/">Java</a>
+              
             </font>
             
 
@@ -180,17 +180,15 @@ classes that you can use:
       </div>
       
 
-      <h1 class="post-title">Json-lib(net.sf.json)包，强烈建议不要再使用</h1>
+      <h1 class="post-title">不需借助server，将浏览器缓存中的数据下载到本地硬盘</h1>
     </header>
 
     <section class="post">
-      <p>最近在使用Json-lib，发现有许多BUG，而且开发者早已不在支持，强烈建议不要再使用此开源包。<br><a id="more"></a><br>下面就说说我这个case。最近项目需要对外提供一个接口，要求返回的数据是json格式的，但是当某字段无数据时，要求用空字符表示，而不是null。当我发现在从Java Bean转化为JSONObject时，可以给JSONObject.fromObject()方法传一个JsonConfig参数，给JsonConfig添加一个JsonValueProcessor，这样就可以当value为Null时，设置自己想要的值。但是试了好多次，均不能把null转化为空字符，网上也没有这方面的blog，虽看源代码发现如下，<br>在JSONObject._fromMap方法中有如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>( <span class="keyword">value</span> != <span class="keyword">null</span> ){</div><div class="line">	JsonValueProcessor jsonValueProcessor = jsonConfig.findJsonValueProcessor(</div><div class="line">		<span class="keyword">value</span>.getClass(), key );</div><div class="line">	<span class="keyword">if</span>( jsonValueProcessor != <span class="keyword">null</span> ){</div><div class="line">		<span class="keyword">value</span> = jsonValueProcessor.processObjectValue( key, <span class="keyword">value</span>, jsonConfig );</div><div class="line">		bypass = <span class="keyword">true</span>;</div><div class="line">		<span class="keyword">if</span>( !JsonVerifier.isValidJsonValue( <span class="keyword">value</span> ) ){</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> JSONException( <span class="string">"Value is not a valid JSON value. "</span> + <span class="keyword">value</span> );</div><div class="line">		}</div><div class="line">	}</div><div class="line">	setValue( jsonObject, key, <span class="keyword">value</span>, <span class="keyword">value</span>.getClass(), jsonConfig, bypass );</div><div class="line">}<span class="keyword">else</span>{</div><div class="line">	<span class="keyword">if</span>( jsonObject.properties.containsKey( key ) ){</div><div class="line">		jsonObject.accumulate( key, JSONNull.getInstance() );</div><div class="line">		firePropertySetEvent( key, JSONNull.getInstance(), <span class="keyword">true</span>, jsonConfig );</div><div class="line">	}<span class="keyword">else</span>{</div><div class="line">		jsonObject.element( key, JSONNull.getInstance() );</div><div class="line">		firePropertySetEvent( key, JSONNull.getInstance(), <span class="keyword">false</span>, jsonConfig );</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+      <p>前段时间参与了一个HTML5的项目，期间有个需求是把存储在浏览器indexedDB中的数据保存到本地硬盘。大家都知道，传统的下载都是通过server下载到本地的，再加上W3C规定浏览器不能访问本地文件系统等原因，这个需求搞了两天才搞定，下面是大概思路，前提是浏览器需要支持HTML5FileSystem API。具体代码实现，需要的朋友请留言：</p>
+<a id="more"></a>
 
-<p>在上面代码中可以看到，当value为null时，JsonValueProcessor早已不起作用，只有当value不为null时，JsonValueProcessor才起作用。而在setValue( jsonObject, key, value, value.getClass(), jsonConfig, bypass );方法中：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>( <span class="keyword">value</span> == null ){</div><div class="line">    <span class="keyword">value</span> = jsonConfig.findDefaultValueProcessor( <span class="class"><span class="keyword">type</span> ).<span class="title">getDefaultValue</span></span>( <span class="class"><span class="keyword">type</span> );</span></div><div class="line">	<span class="keyword">if</span>( !JsonVerifier.isValidJsonValue( <span class="keyword">value</span> ) ){</div><div class="line">		throw <span class="keyword">new</span> JSONException( <span class="string">"Value is not a valid JSON value. "</span> + <span class="keyword">value</span> );</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>这两段代码明显矛盾，所以说在使用JSONObject.fromObject(Object object, JsonConfig jsonConfig)不能使value的值从null变为空字符。</p>
+<p>1、首先从indexedDB中读取到数据，然后再用HTML5的FileSystem API把数据放入浏览器sandbox中，数据存储方式可以是多种文本类型文件，我的是csv格式文件。</p>
+<p>2、HTML5的FileSystem API可以返回存储在sandbox中文件的URL，此URL是一种特殊的URL，指向浏览器沙盒中的一个文件，然后把此URL设置为一个链接的href就可以了，当用户点击此链接的时候，文件就会保存在本地硬盘上了。<br>大致代码如下：<br>fs.root.getFile(“inventory.csv”,{create : true},function(fileEntry) {<br>        fileEntry.createWriter(function(fileWriter) {<br>            fileWriter.onwriteend = function(e) {<br>                $(“#export_inventory_file”).attr(“href”,fileEntry.toURL());<br>            };<br>            fileWriter.onerror = function(e) {<br>            };<br>            if(inventoryData !== null){<br>                $.each(inventoryData,function(index, value){<br>                    temp += CommonUtil.toCSVField(String(value.ITEMNUM)) + “,” +<br>                            CommonUtil.toCSVField(String(value.NK_SPAREPARTSGROUP)) + “,” +<br>                            CommonUtil.toCSVField(String(value.ITEMDESCRIPTION))+ “,” +<br>                            CommonUtil.toCSVField(NKDomain.NK_SMS[value.NK_SMS].DESC) + “,” +<br>                            CommonUtil.toCSVField(String(value.CURBALTOTAL))+ “,” +<br>                            CommonUtil.toCSVField(String(value.SSTOCK)) + “,” +<br>                            CommonUtil.toCSVField(String(value.SSTOCK - value.CURBALTOTAL))+ “,” +<br>                            CommonUtil.toCSVField(String(CommonUtil.toFixed(value.NK_DELIVERY_WAITING,2))) + “,” +<br>                            CommonUtil.toCSVField(String(value.ISSUEUNIT)) + “\r\n”;<br>                });<br>            }<br>            var bb = new Blob([temp]); // Note:<br>            fileWriter.write(bb);<br>        }, null);<br>    }, null);</p>
 
     </section>
 
@@ -198,17 +196,15 @@ classes that you can use:
 
 <nav id="pagination" >
     
-    <a href="/2015/03/28/export/" class="alignleft prev" ><<上一页</a>
     
-    
-    <a href="/2015/01/07/tetris-js/" class="alignright next" >下一页>></a>
+    <a href="/2015/01/17/json/" class="alignright next" >下一页>></a>
     
     <div class="clearfix"></div>
 </nav>
 
 <section class="post-comments">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="post-json" data-title="Json-lib(net.sf.json)包，强烈建议不要再使用" data-url="http://yoursite.com/2015/01/17/json/"></div>
+	<div class="ds-thread" data-thread-key="post-export" data-title="不需借助server，将浏览器缓存中的数据下载到本地硬盘" data-url="http://yoursite.com/2015/03/28/export/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
