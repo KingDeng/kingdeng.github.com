@@ -7,7 +7,7 @@
     
 
     <title>
-      归档: 2014/11 
+      Oracle中，更新主键时会产生表锁 | King Deng&#39;s Blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,16 +15,22 @@
       <meta name="author" content="King Deng">
     
     
+      <meta name="description" content="前两天，项目中遇到一个问题，在多线程批量更新订单时，数据库产生死锁，查了半天最终才找到原因。SQL如下：
+1234567891011UPDATE 	T_TEAM_ORDER T SET 		T.TEAM_ID = #teamId#，	T.PASS_NUM =T.PASS_NUM + #passNum#，	T.WAIT_NUM =T.WAIT_NUM - #waitNum#，	T.FCNY =">
+    
 
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档: 2014/11">
-<meta property="og:url" content="http://yoursite.com/archives/2014/11/">
+    <meta name="description" content="前两天，项目中遇到一个问题，在多线程批量更新订单时，数据库产生死锁，查了半天最终才找到原因。SQL如下：
+1234567891011UPDATE 	T_TEAM_ORDER T SET 		T.TEAM_ID = #teamId#，	T.PASS_NUM =T.PASS_NUM + #passNum#，	T.WAIT_NUM =T.WAIT_NUM - #waitNum#，	T.FCNY =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle中，更新主键时会产生表锁 | King Deng's Blog">
+<meta property="og:url" content="http://yoursite.com/2015/05/13/oracle-lock/">
 <meta property="og:site_name" content="King Deng's Blog">
-<meta property="og:description">
+<meta property="og:description" content="前两天，项目中遇到一个问题，在多线程批量更新订单时，数据库产生死锁，查了半天最终才找到原因。SQL如下：
+1234567891011UPDATE 	T_TEAM_ORDER T SET 		T.TEAM_ID = #teamId#，	T.PASS_NUM =T.PASS_NUM + #passNum#，	T.WAIT_NUM =T.WAIT_NUM - #waitNum#，	T.FCNY =">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归档: 2014/11">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Oracle中，更新主键时会产生表锁 | King Deng's Blog">
+<meta name="twitter:description" content="前两天，项目中遇到一个问题，在多线程批量更新订单时，数据库产生死锁，查了半天最终才找到原因。SQL如下：
+1234567891011UPDATE 	T_TEAM_ORDER T SET 		T.TEAM_ID = #teamId#，	T.PASS_NUM =T.PASS_NUM + #passNum#，	T.WAIT_NUM =T.WAIT_NUM - #waitNum#，	T.FCNY =">
 
     
     
@@ -159,78 +165,68 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+  <article class="post-container post-container--single">
 
-  <h1 class="archive-title">归档: 2014/11</h1>
-  <hr class="post-list__divider" />
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+    <header class="post-header">
     
-    
-    <li>
+      
+      <div class="post-meta">
+        <time datetime="5月 13 2015" class="post-meta__date date">5月 13 2015</time> &#8226; 
 
-      <h2 class="post-list__post-title post-title"><a href="/2014/11/22/find-zhengzhou/" title="link to 发现郑州">发现郑州</a></h2>
+        <span class="post-meta__tags tags">
 
-      <p class="excerpt">
-        <p>如果周末恰好没有事，也没有恋人的约会，那么，我可不可以带你去看看这个城市？<br>我们或结队而行、或三三两两，天气可能下着小雨，也可能是暖暖的晴天，反正总能让人感到一切都刚刚好。<br>我一起去寻找这个城市中那些被我们所忽视的地点，寻找城市中有意思的人，倾听城市的故事，品尝城市的美味。</p>
-
-      </p>
-
-      <div class="post-list__meta">
-
-        <time datetime="11月 22 2014" class="post-list__meta--date date">11月 22 2014</time> &#8226; 
-
-        <span class="post-list__meta--tags tags">
-          <font class="categories">
-            <a class="categories-link" href="/categories/生活/">生活</a>
-          </font>
-          
+            <font class="categories">
+              <a class="categories-link" href="/categories/Oracle/">Oracle</a>
+            </font>
+            
 
         </span>
       </div>
+      
 
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
+      <h1 class="post-title">Oracle中，更新主键时会产生表锁</h1>
+    </header>
 
-      <h2 class="post-list__post-title post-title"><a href="/2014/11/20/hello-world/" title="link to Hello World">Hello World</a></h2>
+    <section class="post">
+      <p>　　前两天，项目中遇到一个问题，在多线程批量更新订单时，数据库产生死锁，查了半天最终才找到原因。<br>SQL如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">UPDATE </div><div class="line">	T_TEAM_ORDER T </div><div class="line">SET 	</div><div class="line">	T.<span class="variable">TEAM_ID =</span> <span class="comment">#teamId#，</span></div><div class="line">	T.<span class="variable">PASS_NUM =</span>T.PASS_NUM + <span class="comment">#passNum#，</span></div><div class="line">	T.<span class="variable">WAIT_NUM =</span>T.WAIT_NUM - <span class="comment">#waitNum#，</span></div><div class="line">	T.<span class="variable">FCNY =</span> T.FCNY + <span class="comment">#fcny#，</span></div><div class="line">	T.<span class="variable">SCNY =</span> T.SCNY + <span class="comment">#scny#，</span></div><div class="line">	T.<span class="variable">PAY_LIMIT =</span> <span class="comment">#payDate#</span></div><div class="line">WHERE </div><div class="line">	T.<span class="variable">TEAM_ID =</span> <span class="comment">#teamId#</span></div></pre></td></tr></table></figure>
 
-      <p class="excerpt">
-        <p>像其他IT从业者一样，Blog所在的位置也在不断的变化，从以前的CSDN再到现在的Github，每一次的搬迁过程都好比攀登一座高峰，虽然路上充满了阻碍与困难，但是还是不断的一往无前地前进，每当到达新的高度时，心里都充满了自豪感。
-      </p>
+<p>其中TEAM_ID是主键，第一眼看到这条sql时就感觉奇怪，为啥要update主键呢？当时也没有太在意，这条sql并不是我写的，我只是用一下而已，心想也许写这条sql的同事有特别的用意吧。当我使用这条sql进行多线程批量更新订单时Oracle产生死锁，而我的每个线程update的订单都是独立的，互不交叉，而Oracle又是默认行锁的，怎么可能产生死锁呢，最后leader看到说是数据库产生表锁了，把T.TEAM_ID = #teamId#这句去掉的确好了。</p>
 
-      <div class="post-list__meta">
+    </section>
 
-        <time datetime="11月 20 2014" class="post-list__meta--date date">11月 20 2014</time> &#8226; 
-
-        <span class="post-list__meta--tags tags">
-          <font class="categories">
-            <a class="categories-link" href="/categories/IT/">IT</a>
-          </font>
-          
-
-        </span>
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number">Page 1 of 1</span>
+<nav id="pagination" >
     
     
+    <a href="/2015/03/28/export/" class="alignright next" >下一页>></a>
+    
+    <div class="clearfix"></div>
 </nav>
 
+<section class="post-comments">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="post-oracle-lock" data-title="Oracle中，更新主键时会产生表锁" data-url="http://yoursite.com/2015/05/13/oracle-lock/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+		var duoshuoQuery = {short_name:"kingdeng"};
+		(function() {
+			var ds = document.createElement('script');
+			ds.type = 'text/javascript';ds.async = true;
+			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+			ds.charset = 'UTF-8';
+			(document.getElementsByTagName('head')[0] 
+			 || document.getElementsByTagName('body')[0]).appendChild(ds);
+		})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</section>
 
-</div>
+  </article>
+
+
         </div>
     </div>
 
