@@ -184,7 +184,8 @@ classes that you can use:
     </header>
 
     <section class="post">
-      <p>在很多面试过程中都会问到exists和in这两个函数的用法，以及各自的优点。Exists准确来说是一个函数，而In是一个操作符。<br><a id="more"></a><br>语法： EXISTS(subquery)<br>参数： subquery 是一个受限的 SELECT 语句 (不允许有 COMPUTE 子句和 INTO 关键字)。<br>结果类型： Boolean 如果子查询包含行，则返回 TRUE ，否则返回 FLASE 。<br>通俗的可以理解为：将外查询表的每一行，代入内查询作为检验，如果内查询返回的结果取非空值，则EXISTS子句返回TRUE，这一行行可作为外查询的结果行，否则不能作为结果。<br>EXISTS与IN的使用效率的问题，通常情况下采用exists要比in效率高，因为IN不走索引，但要看实际情况具体使用：<br>IN适合于外表大而内表小的情况；EXISTS适合于外表小而内表大的情况。</p>
+      <p>在很多面试过程中都会问到exists和in这两个函数的用法，以及各自的优点。Exists准确来说是一个函数，而In是一个操作符。<br><a id="more"></a><br>语法： EXISTS(subquery)<br>参数： subquery 是一个受限的 SELECT 语句 (不允许有 COMPUTE 子句和 INTO 关键字)。<br>结果类型： Boolean 如果子查询包含行，则返回 TRUE ，否则返回 FLASE 。<br>通俗的可以理解为：将外查询表的每一行，代入内查询作为检验，如果内查询返回的结果取非空值，则EXISTS子句返回TRUE，这一行行可作为外查询的结果行，否则不能作为结果。</p>
+<p>EXISTS与IN的使用效率的问题，通常情况下采用exists要比in效率高，因为IN不走索引，但要看实际情况具体使用：<br>IN适合于外表大而内表小的情况；EXISTS适合于外表小而内表大的情况。</p>
 
     </section>
 
