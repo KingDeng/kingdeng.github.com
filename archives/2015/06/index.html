@@ -7,7 +7,7 @@
     
 
     <title>
-      SQL中的exists和In | King Deng&#39;s Blog 
+      归档: 2015/6 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,18 +15,16 @@
       <meta name="author" content="King Deng">
     
     
-      <meta name="description" content="在很多面试过程中都会问到exists和in这两个函数的用法，以及各自的优点。Exists准确来说是一个函数，而In是一个操作符。">
-    
 
-    <meta name="description" content="在很多面试过程中都会问到exists和in这两个函数的用法，以及各自的优点。Exists准确来说是一个函数，而In是一个操作符。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SQL中的exists和In | King Deng's Blog">
-<meta property="og:url" content="http://yoursite.com/2015/05/25/sql-exists/">
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="归档: 2015/6">
+<meta property="og:url" content="http://yoursite.com/archives/2015/06/">
 <meta property="og:site_name" content="King Deng's Blog">
-<meta property="og:description" content="在很多面试过程中都会问到exists和in这两个函数的用法，以及各自的优点。Exists准确来说是一个函数，而In是一个操作符。">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL中的exists和In | King Deng's Blog">
-<meta name="twitter:description" content="在很多面试过程中都会问到exists和in这两个函数的用法，以及各自的优点。Exists准确来说是一个函数，而In是一个操作符。">
+<meta name="twitter:title" content="归档: 2015/6">
+<meta name="twitter:description">
 
     
     
@@ -161,68 +159,53 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
-  <article class="post-container post-container--single">
 
-    <header class="post-header">
+  <h1 class="archive-title">归档: 2015/6</h1>
+  <hr class="post-list__divider" />
+
+
+<div class="main-post-list">
+    <ol class="post-list">
     
-      
-      <div class="post-meta">
-        <time datetime="5月 25 2015" class="post-meta__date date">5月 25 2015</time> &#8226; 
+    
+    <li>
 
-        <span class="post-meta__tags tags">
+      <h2 class="post-list__post-title post-title"><a href="/2015/06/21/struts-tag/" title="link to struts-tag">struts-tag</a></h2>
 
-            <font class="categories">
-              <a class="categories-link" href="/categories/SQL/">SQL</a>
-            </font>
+      <p class="excerpt">
+        <p>今天在使用struts2中的checkboxlist标签时，一直报如下错误：<br>Expression parameters.name is undefined on line 59, column 32 in template/simple/checkboxlist.ftl.<br>The problematic instruction:<br>
+      </p>
+
+      <div class="post-list__meta">
+
+        <time datetime="6月 21 2015" class="post-list__meta--date date">6月 21 2015</time> &#8226; 
+
+        <span class="post-list__meta--tags tags">
+          <font class="categories">
             
+          </font>
+          
 
         </span>
       </div>
-      
 
-      <h1 class="post-title">SQL中的exists和In</h1>
-    </header>
+      <hr class="post-list__divider" />
+    </li>
+    
+  </ol>
 
-    <section class="post">
-      <p>在很多面试过程中都会问到exists和in这两个函数的用法，以及各自的优点。Exists准确来说是一个函数，而In是一个操作符。<br><a id="more"></a><br>语法： EXISTS(subquery)<br>参数： subquery 是一个受限的 SELECT 语句 (不允许有 COMPUTE 子句和 INTO 关键字)。<br>结果类型： Boolean 如果子查询包含行，则返回 TRUE ，否则返回 FLASE 。<br>通俗的可以理解为：将外查询表的每一行，代入内查询作为检验，如果内查询返回的结果取非空值，则EXISTS子句返回TRUE，这一行行可作为外查询的结果行，否则不能作为结果。</p>
-<p>EXISTS与IN的使用效率的问题，通常情况下采用exists要比in效率高，因为IN不走索引，但要看实际情况具体使用：<br>IN适合于外表大而内表小的情况；EXISTS适合于外表小而内表大的情况。</p>
+  <hr class="post-list__divider " />
 
-    </section>
-
+<nav class="pagination" role="navigation">
     
 
-<nav id="pagination" >
-    
-    <a href="/2015/06/21/struts-tag/" class="alignleft prev" ><<上一页</a>
+    <span class="pagination__page-number">Page 1 of 1</span>
     
     
-    <a href="/2015/05/13/oracle-lock/" class="alignright next" >下一页>></a>
-    
-    <div class="clearfix"></div>
 </nav>
 
-<section class="post-comments">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="post-sql-exists" data-title="SQL中的exists和In" data-url="http://yoursite.com/2015/05/25/sql-exists/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-		var duoshuoQuery = {short_name:"kingdeng"};
-		(function() {
-			var ds = document.createElement('script');
-			ds.type = 'text/javascript';ds.async = true;
-			ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-			ds.charset = 'UTF-8';
-			(document.getElementsByTagName('head')[0] 
-			 || document.getElementsByTagName('body')[0]).appendChild(ds);
-		})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</section>
 
-  </article>
-
-
+</div>
         </div>
     </div>
 
